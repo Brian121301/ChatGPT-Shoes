@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Emporium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Light grey background */
+        }
+
+        header {
+            background-color: #333; /* Dark grey header */
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #555; /* Dark grey buttons */
+        }
+
+        nav a:hover {
+            background-color: #777; /* Light grey on hover */
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .shoe {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .shoe img {
+            max-width: 150px;
+            margin-right: 20px;
+        }
+
+        footer {
+            background-color: #333; /* Dark grey footer */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+        </nav>
+        <h1>Welcome to Shoe Emporium</h1>
+    </header>
+
+    <div class="container">
+        <div class="shoe">
+            <img src="nike_logo.png" alt="Nike Logo">
+            <div>
+                <h2>Nike</h2>
+                <p>Nike, Inc. is an American multinational corporation that is engaged in the design, development,
+                    manufacturing, and worldwide marketing and sales of footwear, apparel, equipment, accessories,
+                    and services. The company is one of the world's largest suppliers of athletic shoes and apparel
+                    and a major manufacturer of sports equipment.</p>
+            </div>
+        </div>
+
+        <div class="shoe">
+            <img src="adidas_logo.png" alt="Adidas Logo">
+            <div>
+                <h2>Adidas</h2>
+                <p>Adidas AG is a German multinational corporation, founded and headquartered in Herzogenaurach,
+                    Germany, that designs and manufactures shoes, clothing, and accessories. It is the largest
+                    sportswear manufacturer in Europe and the second-largest in the world, after Nike.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Shoe Emporium. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
