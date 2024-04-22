@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shoe Emporium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-D3SOLHDNXE77oSv4rwPGpx6A93Oj5gJGSqbsMIdSyKzxLw/JmPnFv/PNPxiyOemj" crossorigin="anonymous">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f0f0f0; /* Light grey background */
+            color: #333; /* Default text color */
         }
 
         header {
@@ -22,8 +25,9 @@
 
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Distribute items evenly */
             align-items: center;
+            margin-top: 20px; /* Added margin to separate from header */
         }
 
         nav a {
@@ -32,9 +36,37 @@
             padding: 10px 20px;
             border-radius: 5px;
             background-color: #555; /* Dark grey buttons */
+            margin: 0 10px; /* Added margin between buttons */
+            transition: background-color 0.3s; /* Smooth transition on hover */
         }
 
         nav a:hover {
+            background-color: #777; /* Light grey on hover */
+        }
+
+        .search-form {
+            display: flex;
+            margin-right: 20px;
+        }
+
+        .search-input {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+        }
+
+        .search-button {
+            padding: 8px 20px;
+            border-radius: 5px;
+            background-color: #555; /* Dark grey button */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition on hover */
+        }
+
+        .search-button:hover {
             background-color: #777; /* Light grey on hover */
         }
 
@@ -42,20 +74,27 @@
             max-width: 960px;
             margin: 20px auto;
             padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+            gap: 20px;
         }
 
         .shoe {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s; /* Smooth transition on hover */
+        }
+
+        .shoe:hover {
+            transform: translateY(-5px); /* Lift up on hover */
         }
 
         .shoe img {
-            max-width: 150px;
+            max-width: 100px;
             margin-right: 20px;
         }
 
@@ -67,18 +106,96 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s; /* Smooth transition on hover */
+        }
+
+        .social-icons a:hover {
+            color: #777; /* Light grey on hover */
+        }
+
+        .mode-switch {
+            display: flex;
+            align-items: center;
+        }
+
+        .mode-switch label {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .mode-switch input[type="checkbox"] {
+            display: none;
+        }
+
+        .slider {
+            position: relative;
+            width: 60px;
+            height: 34px;
+        }
+
+        .slider:before {
+            content: "";
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: #fff;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input[type="checkbox"]:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        /* Dark mode styles */
+        input[type="checkbox"]:checked + .slider {
+            background-color: #333;
+        }
+
+        input[type="checkbox"]:checked + .slider:before {
+            background-color: #333;
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
     </style>
 </head>
 
 <body>
 
     <header>
+        <h1>Welcome to Shoe Emporium</h1>
         <nav>
             <a href="#">Home</a>
             <a href="#">Products</a>
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button type="submit" class="search-button">Search</button>
+            </form>
         </nav>
-        <h1>Welcome to Shoe Emporium</h1>
     </header>
 
     <div class="container">
@@ -102,6 +219,28 @@
                     sportswear manufacturer in Europe and the second-largest in the world, after Nike.</p>
             </div>
         </div>
+
+        <div class="shoe">
+            <img src="puma_logo.png" alt="Puma Logo">
+            <div>
+                <h2>Puma</h2>
+                <p>Puma SE, branded as Puma, is a German multinational corporation that designs and manufactures
+                    athletic and casual footwear, apparel, and accessories, which is headquartered in Herzogenaurach,
+                    Bavaria, Germany. Puma is the third-largest sportswear manufacturer in the world.</p>
+            </div>
+        </div>
+
+        <div class="shoe">
+            <img src="reebok_logo.png" alt="Reebok Logo">
+            <div>
+                <h2>Reebok</h2>
+                <p>Reebok International Limited is an English-American footwear and clothing company that has been a
+                    subsidiary of German sporting goods giant Adidas since August 2005. Reebok produces and
+                    distributes fitness, running, and CrossFit sportswear, including clothing and footwear.</p>
+            </div>
+        </div>
+
+        <!-- Add more product listings here if needed -->
     </div>
 
     <footer>
